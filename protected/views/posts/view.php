@@ -12,7 +12,7 @@
     <span class="fui-time"><?=date('Y-m-d h:s',$model->create_time);?></span>&nbsp;
     <a href="#comment"> <span class="fui-chat"><?=$model->comment_count;?>评论</span></a>
     <span class="label label-danger"><?=$model->getVisiterCount();?>人浏览</span>
-
+    <span class="label label-default"><?=Tags::model()->getTags($model->id);?></span>
 </div>
 <hr>
 <div class="entry-content">

@@ -43,8 +43,8 @@
     <div class="row pal" style="padding-left: 0px">
         <?php
             $this->renderPartial('_tag',array(
-               'model'=>$form,
-                'id'=>empty($model->id)?'':$model->id,
+               'model'=>$model,
+                'form'=>$form,
                 'tag'=>$tag,
             ));
         ?>

@@ -15,6 +15,9 @@ RewriteCond %{REQUEST_FILENAME} !-d
 
 
 # otherwise forward it to index.php
-RewriteBase /xblog
+RewriteBase /
 
 RewriteRule . index.php
+
+#防盗链
+RewriteRule \.(jpg|gif|png|bmp|swf|jpeg)$ /error/daolian.gif [R,NC,L]

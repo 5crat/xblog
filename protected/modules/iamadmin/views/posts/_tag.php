@@ -4,5 +4,5 @@
 /* @var $form CActiveForm */
 ?>
 
-<?php echo $model->textField($tag,'name',array('size'=>50,'maxlength'=>50,'class'=>'tagsinput', 'value'=>Tags::model()->getTags($id))); ?>
-<?php echo $model->error($tag,'name'); ?>
+<?php echo $form->textField($tag,'name',array('size'=>50,'maxlength'=>50,'class'=>'tagsinput', 'value'=>empty($model->id)?'':Tags::model()->getTags($id),'style'=>'height:100%')); ?>
+<?php echo $form->error($tag,'name'); ?>
