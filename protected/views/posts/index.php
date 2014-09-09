@@ -24,7 +24,7 @@
                 </strong>
             </p>
             <a href="<?=Yii::app()->request->BaseUrl;?>/index.php/Posts/view/<?=$value['id'];?>">
-                <h3><?=$value['title'];?></h3>
+                <h5><?=$value['title'];?></h5>
                 <br>
             </a>
                 <?=preg_replace('/\s(?=\s)/','',substr(strip_tags($value['content']),0,150));?>

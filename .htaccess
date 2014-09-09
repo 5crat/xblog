@@ -20,4 +20,4 @@ RewriteBase /
 RewriteRule . index.php
 
 #防盗链
-RewriteRule \.(jpg|gif|png|bmp|swf|jpeg)$ /error/daolian.gif [R,NC,L]
+#RewriteRule \.(jpg|gif|png|bmp|swf|jpeg)$ /error/daolian.gif [R,NC,L]

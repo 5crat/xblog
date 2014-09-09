@@ -11,6 +11,9 @@ class LoginForm extends CFormModel
 	public $password;
 	public $rememberMe;
 
+    //验证码
+    public $verifyCode;
+
 	private $_identity;
 
 	/**
@@ -27,6 +30,9 @@ class LoginForm extends CFormModel
 			array('rememberMe', 'boolean'),
 			// password needs to be authenticated
 			array('password', 'authenticate'),
+            //verifyCode
+            array('verifyCode','required','message'=>'验证码不能为空'),
+            array('verifyCode', 'captcha', 'on'=>'login', 'allowEmpty'=>!CCaptcha::checkRequirements()),
 		);
 	}
 
@@ -36,7 +42,7 @@ class LoginForm extends CFormModel
 	public function attributeLabels()
 	{
 		return array(
-			'rememberMe'=>'Remember me next time',
+			'rememberMe'=>'下次记住我',
 		);
 	}
 
@@ -50,11 +56,24 @@ class LoginForm extends CFormModel
 		{
 			$this->_identity=new UserIdentity($this->username,$this->password);
 			if(!$this->_identity->authenticate())
-				$this->addError('password','Incorrect username or password.');
+				$this->addError('password','用户名或者密码错误.');
 		}
 	}
 
-	/**
+    /**
+     * 验证验证码正确性
+     * @param $verifyCode
+     * @return bool
+     */
+    public function validateVerifyCode($verifyCode){
+        if(strtolower($this->verifyCode) === strtolower($verifyCode)){
+            return true;
+        }else{
+            $this->addError('verifyCode','验证码错误.');
+        }
+    }
+
+    /**
 	 * Logs in the user using the given username and password in the model.
 	 * @return boolean whether login is successful
 	 */

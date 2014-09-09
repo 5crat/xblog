@@ -32,17 +32,18 @@ class Users extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('username', 'required', 'message'=>'用户名不能为空'),
-			array('nickname', 'required', 'message'=>'昵称不能为空'),
-			array('password', 'required', 'message'=>'密码不能为空'),
-			array('email', 'required', 'message'=>'E-MAIL不能为空'),
+			array('username', 'required', 'message'=>''),
+			array('nickname', 'required', 'message'=>''),
+			array('password', 'required', 'message'=>''),
+			array('email', 'required', 'message'=>''),
 			array('username, nickname', 'length', 'max'=>50),
 			array('password', 'length', 'max'=>32),
 			array('salt', 'length', 'max'=>255),
 			array('email', 'length', 'max'=>100),
 			array('info', 'length', 'max'=>200),
 			array('create_time, update_time', 'length', 'max'=>10),
-			// The following rule is used by search().
+
+            // The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, username, nickname, password, salt, email, info, create_time, update_time', 'safe', 'on'=>'search'),
 		);
@@ -131,7 +132,9 @@ class Users extends CActiveRecord
         {
             if($this->isNewRecord)
             {
+                $this->salt = uniqid();
                 $this->create_time = time();
+                $this->password = $this->encryptPass($this->password,$this->salt);
             }
             else
             {
@@ -140,5 +143,25 @@ class Users extends CActiveRecord
             return true;
         }
         return false;
+    }
+
+    /**
+     * 验证密码正确性
+     * @param $pass
+     * @return bool
+     */
+    public function checkPass($pass)
+    {
+        return $this->encryptPass($pass,$this->salt) == $this->password;
+    }
+    /**
+     * md5加密密码
+     * @param $pass
+     * @param $salt
+     * @return string
+     */
+    public function encryptPass($pass,$salt)
+    {
+        return md5($salt.$pass);
     }
 }

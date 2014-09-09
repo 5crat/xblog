@@ -8,7 +8,28 @@ class AuthController extends Controller
 {
     public $layout = '/layouts/login';
 
-    public $returnUrl = '/iamadmin/manager/index';
+    public $returnUrl;
+
+    public function init(){
+        parent::init();
+        $this->returnUrl = Yii::app()->params['returnUrl'];
+    }
+
+    /**
+     * Specifies the access control rules.
+     * This method is used by the 'accessControl' filter.
+     * @return array access control rules
+     */
+    public function accessRules()
+    {
+        return array(
+
+            array('allow', // allow admin user to perform 'admin' and 'delete' actions
+                'actions'=>array('login','captcha'),
+                'users'=>array('*'),
+            ),
+        );
+    }
     /**
      * Declares class-based actions.
      */
@@ -19,6 +40,12 @@ class AuthController extends Controller
             'captcha'=>array(
                 'class'=>'CCaptchaAction',
                 'backColor'=>0xFFFFFF,
+                'maxLength'=>'5',       // 最多生成几个字符
+                'minLength'=>'5',       // 最少生成几个字符
+                'height'=>'40',
+                'fixedVerifyCode' => substr(md5(time()),11,4),
+                'transparent'=>true,
+                'testLimit'=>999,
             ),
             // page action renders "static" pages stored under 'protected/views/site/pages'
             // They can be accessed via: index.php?r=site/page&view=FileName
@@ -49,7 +76,7 @@ class AuthController extends Controller
             $model->attributes=$_POST['LoginForm'];
             // validate user input and redirect to the previous page if valid
 
-            if($model->validate() && $model->login())
+            if($model->validate() && $model->login() && $model->validateVerifyCode($this->createAction('captcha')->getVerifyCode()))
                 $this->redirect(Yii::app()->request->BaseUrl.$this->returnUrl);
         }
         // display the login form

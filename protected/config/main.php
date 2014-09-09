@@ -54,14 +54,9 @@ return array(
             'class'=>'CWebUser',
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
-            'loginUrl'=>array('iamadmin/auth/login'),
-            'returnUrl'=>'/iamadmin/manager/index',
+            'loginUrl'=>array('/iamadmin/auth/login'),
 		),
 
-        /*//开启token
-        'request'=>array(
-            'enableCsrfValidation'=>true,
-        ),*/
         // uncomment the following to enable URLs in path-format
 
 		'urlManager'=>array(
@@ -115,6 +110,8 @@ return array(
 		// this is used in contact page
 		'adminEmail'=>'webmaster@example.com',
         //this is show number with every page
-        'pageSize'=>'15'
+        'pageSize'=>'15',
+        //login auto jump address
+        'returnUrl'=>'/index.php/iamadmin/manager/index',
 	),
 );

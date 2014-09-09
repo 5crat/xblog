@@ -4,9 +4,7 @@
 /* @var $form CActiveForm */
 ?>
 
-<div class="demo-title">
-    添加用户
-</div>
+
 <div class="form pal">
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'users-form',
