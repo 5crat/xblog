@@ -12,7 +12,7 @@ $this->pageTitle=Yii::app()->name . ' - Login';
         <?php $form=$this->beginWidget('CActiveForm', array(
             'id'=>'login-form',
             'enableAjaxValidation'=>false,
-            'enableClientValidation'=>true,
+            'enableClientValidation'=>false,
             'clientOptions'=>array(
                 'validateOnSubmit'=>true,
             ),

@@ -127,7 +127,7 @@ class CCaptchaAction extends CAction
 			));
 		}
 		else
-			$this->renderImage($this->getVerifyCode(true));
+			$this->renderImage($this->getVerifyCode());
 		Yii::app()->end();
 	}
 

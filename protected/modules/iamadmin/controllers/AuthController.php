@@ -45,7 +45,7 @@ class AuthController extends Controller
                 'height'=>'40',
                 /*'fixedVerifyCode' => substr(md5(time()),11,5),*/
                 'transparent'=>true,    //背景颜色透明
-                'testLimit'=>999,
+                'testLimit'=>1,
             ),
             // page action renders "static" pages stored under 'protected/views/site/pages'
             // They can be accessed via: index.php?r=site/page&view=FileName
@@ -61,14 +61,7 @@ class AuthController extends Controller
 
     public function actionLogin()
     {
-        $model=new LoginForm;
-
-        // if it is ajax validation request
-        if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
-        {
-            echo CActiveForm::validate($model);
-            Yii::app()->end();
-        }
+        $model=new LoginForm('login');
 
         // collect user input data
         if(isset($_POST['LoginForm']))
@@ -76,7 +69,7 @@ class AuthController extends Controller
             $model->attributes=$_POST['LoginForm'];
             // validate user input and redirect to the previous page if valid
 
-            if($model->validate() && $model->login() && $model->validateVerifyCode($this->createAction('captcha')->getVerifyCode()))
+            if($model->validate() && $model->login())
                 $this->redirect(Yii::app()->request->BaseUrl.$this->returnUrl);
         }
         // display the login form
