@@ -39,12 +39,12 @@ class AuthController extends Controller
             // captcha action renders the CAPTCHA image displayed on the contact page
             'captcha'=>array(
                 'class'=>'CCaptchaAction',
-                'backColor'=>0xFFFFFF,
+                /*'backColor'=>0xFFFFFF,*/
                 'maxLength'=>'5',       // 最多生成几个字符
                 'minLength'=>'5',       // 最少生成几个字符
                 'height'=>'40',
-                'fixedVerifyCode' => substr(md5(time()),11,4),
-                'transparent'=>true,
+                /*'fixedVerifyCode' => substr(md5(time()),11,5),*/
+                'transparent'=>true,    //背景颜色透明
                 'testLimit'=>999,
             ),
             // page action renders "static" pages stored under 'protected/views/site/pages'
