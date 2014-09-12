@@ -9,7 +9,10 @@
     padding-left: 20px;
 
 }
-
+#menu_controller{
+    right: 5%;
+    position:fixed;
+}
 #blogcon{
     padding-right: 2%;
 }

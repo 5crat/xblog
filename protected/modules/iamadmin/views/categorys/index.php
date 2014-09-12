@@ -34,6 +34,9 @@
 
 <div class="panel panel-default">
     <div class="panel-heading">管理分类</div>
+    <div class="blogli">
+        <a id="create" href="#create" class="btn btn-block btn-lg btn-inverse">添加分类</a>
+    </div>
     <table class="table">
         <thead>
         <tr>
@@ -58,9 +61,7 @@
         <?php }?>
         </tbody>
     </table>
-    <div class="col-xs-2 blogli">
-        <a id="create" href="#create" class="btn btn-block btn-lg btn-inverse">添加分类</a>
-    </div>
+
 </div>
 <div style="margin-top: 50px;">
 <div id="showcreate" class="tooltip fade bottom in" style="display: none">

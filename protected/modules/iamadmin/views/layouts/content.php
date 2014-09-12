@@ -26,7 +26,7 @@
         </div>
     </nav>
     <div class="blogpal"></div>
-        <nav id="menu_controller" class="navbar navbar-inverse navbar-embossed navbar-left affix" role="navigation">
+        <nav id="menu_controller" class="navbar navbar-inverse navbar-embossed navbar-right " role="navigation">
             <div class="collapse navbar-collapse" style="padding-top: 10px;padding-bottom: 10px;">
 
                 <?php $this->widget('zii.widgets.CMenu',array(
@@ -43,7 +43,7 @@
 
             </div>
         </nav>
-        <div class=" ptl col-lg-offset-2 col-sm-9" id="content">
+        <div class=" ptl col-lg-offset-1 col-sm-9" id="content">
             <?php echo $content;?>
         </div>
 </div>

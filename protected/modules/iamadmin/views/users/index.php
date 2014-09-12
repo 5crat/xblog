@@ -18,6 +18,9 @@ $(document).ready(function(){
 </script>
 <div class="panel panel-default" id="users-grid">
     <div class="panel-heading">管理用户</div>
+    <div class="blogli">
+        <a href="<?=Yii::app()->request->BaseUrl.'/index.php/iamadmin/users/create';?>" class="btn btn-block btn-lg btn-inverse">添加用户</a>
+    </div>
     <table class="table">
         <thead>
         <tr>
@@ -47,9 +50,7 @@ $(document).ready(function(){
         <?php }?>
         </tbody>
     </table>
-    <div class="col-xs-2 blogli">
-        <a href="<?=Yii::app()->request->BaseUrl.'/index.php/iamadmin/users/create';?>" class="btn btn-block btn-lg btn-inverse">添加用户</a>
-    </div>
+
     <div class="col-lg-offset-5">
         <?php
         XUtils::linkPage($pages,$this)

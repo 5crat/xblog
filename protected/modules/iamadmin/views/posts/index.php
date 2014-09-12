@@ -19,6 +19,9 @@
 
 <div class="panel panel-default">
     <div class="panel-heading">管理文章</div>
+    <div class=" blogli">
+        <a href="<?=Yii::app()->request->BaseUrl.'/index.php/iamadmin/posts/create';?>" class="btn btn-block btn-lg btn-inverse">发布文章</a>
+    </div>
     <table class="table">
         <thead>
         <tr>
@@ -45,9 +48,7 @@
         <?php }?>
         </tbody>
     </table>
-    <div class="col-xs-2 blogli">
-        <a href="<?=Yii::app()->request->BaseUrl.'/index.php/iamadmin/posts/create';?>" class="btn btn-block btn-lg btn-inverse">发布文章</a>
-    </div>
+
     <div class="col-lg-offset-5">
     <?php
     XUtils::linkPage($pages,$this)
