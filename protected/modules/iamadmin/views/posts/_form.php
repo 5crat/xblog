@@ -4,9 +4,7 @@
 /* @var $form CActiveForm */
 /* @var $tag Posts */
 ?>
-<div class="demo-title">
-    发布文章
-</div>
+
 <div class="form pal">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
