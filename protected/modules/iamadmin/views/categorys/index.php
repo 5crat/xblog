@@ -6,7 +6,7 @@
 <script type="text/javascript">
     $(document).ready(function(){
         $("a.delete").click(function(){
-            if(!confirm("确定删除？")) return false;
+            if(!confirm("Are you sure delete it?")) return false;
             $.post("<?=Yii::app()->request->BaseUrl;?>/index.php/iamadmin/categorys/delete/id/"+$(this).attr('value'),
                 {
                     id:$(this).attr('value')
@@ -33,9 +33,9 @@
 </script>
 
 <div class="panel panel-default">
-    <div class="panel-heading">管理分类</div>
+    <div class="panel-heading">Manage Categorys</div>
     <div class="blogli">
-        <a id="create" href="#create" class="btn btn-block btn-lg btn-inverse">添加分类</a>
+        <a id="create" href="#create" class="btn btn-block btn-lg btn-inverse">Create Category</a>
     </div>
     <table class="table">
         <thead>
@@ -67,9 +67,9 @@
 <div id="showcreate" class="tooltip fade bottom in" style="display: none">
     <div class="tooltip-arrow"></div>
     <div class="tooltip-inner">
-        <input id="value" class="form-control" type="text" size="16" maxlength="16" placeholder="文章分类名称">
-        <button id="yes" class="btn btn-info">确定</button>
-        <button id="no" class="btn btn-danger">取消</button>
+        <input id="value" class="form-control" type="text" size="16" maxlength="16" placeholder="Category Name">
+        <button id="yes" class="btn btn-info">OK</button>
+        <button id="no" class="btn btn-danger">Cancel</button>
     </div>
 </div>
 </div>

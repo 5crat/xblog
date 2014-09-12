@@ -4,6 +4,6 @@
 /* @var $tag Posts */
 ?>
 <div class="demo-title">
-    编辑文章
+    Create Article
 </div>
 <?php $this->renderPartial('_form', array('model'=>$model,'tag'=>$tag)); ?>

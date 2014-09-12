@@ -4,7 +4,6 @@
 
 ?>
 
-<h1>View Posts #<?php echo $model->id; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
@@ -14,7 +13,5 @@
 		'category_id',
 		'content',
 		'status',
-		'create_time',
-		'update_time',
 	),
 )); ?>

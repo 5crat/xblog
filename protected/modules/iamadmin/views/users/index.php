@@ -17,9 +17,9 @@ $(document).ready(function(){
 });
 </script>
 <div class="panel panel-default" id="users-grid">
-    <div class="panel-heading">管理用户</div>
+    <div class="panel-heading">Manage User</div>
     <div class="blogli">
-        <a href="<?=Yii::app()->request->BaseUrl.'/index.php/iamadmin/users/create';?>" class="btn btn-block btn-lg btn-inverse">添加用户</a>
+        <a href="<?=Yii::app()->request->BaseUrl.'/index.php/iamadmin/users/create';?>" class="btn btn-block btn-lg btn-inverse">Create User</a>
     </div>
     <table class="table">
         <thead>

@@ -48,7 +48,7 @@
         ?>
     </div>
 	<div class="row buttons pal">
-		<?php echo CHtml::submitButton($model->isNewRecord ? '发布文章' : '保存',array('class'=>'btn btn-embossed btn-primary')); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Finish' : 'Save',array('class'=>'btn btn-embossed btn-primary')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

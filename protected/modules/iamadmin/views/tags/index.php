@@ -1,15 +1,6 @@
 <?php
 /* @var $this TagsController */
 /* @var $dataProvider CActiveDataProvider */
-
-$this->breadcrumbs=array(
-	'Tags',
-);
-
-$this->menu=array(
-	array('label'=>'Create Tags', 'url'=>array('create')),
-	array('label'=>'Manage Tags', 'url'=>array('admin')),
-);
 ?>
 
 <h1>Tags</h1>

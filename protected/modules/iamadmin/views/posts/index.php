@@ -18,9 +18,9 @@
 </script>
 
 <div class="panel panel-default">
-    <div class="panel-heading">管理文章</div>
+    <div class="panel-heading">Manage Article</div>
     <div class=" blogli">
-        <a href="<?=Yii::app()->request->BaseUrl.'/index.php/iamadmin/posts/create';?>" class="btn btn-block btn-lg btn-inverse">发布文章</a>
+        <a href="<?=Yii::app()->request->BaseUrl.'/index.php/iamadmin/posts/create';?>" class="btn btn-block btn-lg btn-inverse">Create Article</a>
     </div>
     <table class="table">
         <thead>

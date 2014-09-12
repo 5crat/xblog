@@ -26,7 +26,7 @@
 	</div>
 
 	<div class="row buttons pal">
-		<?php echo CHtml::submitButton($model->isNewRecord ? '创建' : '保存',array('class'=>'btn btn-embossed btn-primary')); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array('class'=>'btn btn-embossed btn-primary')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

@@ -7,6 +7,9 @@
 Yii::app()->clientScript->registerCssFile($this->assetsUrl.'/css/shCoreDefault.css');
 Yii::app()->clientScript->registerScriptFile($this->assetsUrl.'/js/shCore.js');
 ?>
+<script>
+    SyntaxHighlighter.all() //执行代码高亮
+</script>
 <header class="entry-header">
     <h3><?=$model->title;?></h3>
 </header>
