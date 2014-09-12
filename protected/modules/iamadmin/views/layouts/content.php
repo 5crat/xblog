@@ -31,11 +31,11 @@
 
                 <?php $this->widget('zii.widgets.CMenu',array(
                     'items'=>array(
-                        array('label'=>'首页', 'url'=>array('/iamadmin/manager/index')),
-                        array('label'=>'用户', 'url'=>array('/iamadmin/users/index')),
-                        array('label'=>'文章', 'url'=>array('/iamadmin/posts/index')),
-                        array('label'=>'分类', 'url'=>array('/iamadmin/categorys/index')),
-                        array('label'=>'评论', 'url'=>array('/iamadmin/comments/index')),
+                        array('label'=>'Home', 'url'=>array('/iamadmin/manager/index')),
+                        array('label'=>'Users', 'url'=>array('/iamadmin/users/index')),
+                        array('label'=>'Posts', 'url'=>array('/iamadmin/posts/index')),
+                        array('label'=>'Categorys', 'url'=>array('/iamadmin/categorys/index')),
+                        array('label'=>'Comments', 'url'=>array('/iamadmin/comments/index')),
                         array('label'=>'Blog', 'url'=>array('/')),
                     ),
                     'htmlOptions'=>array('class'=>'nav nav-pills nav-stacked'),

@@ -3,7 +3,10 @@
 /* @var $model Posts */
 /* @var $comment PostsController */
 ?>
-
+<?php
+Yii::app()->clientScript->registerCssFile($this->assetsUrl.'/css/shCoreDefault.css');
+Yii::app()->clientScript->registerScriptFile($this->assetsUrl.'/js/shCore.js');
+?>
 <header class="entry-header">
     <h3><?=$model->title;?></h3>
 </header>

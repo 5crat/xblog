@@ -9,7 +9,7 @@ Yii::app()->clientScript->registerCSSFile($this->assetsUrl.'/css/docs.css');
 Yii::app()->clientScript->registerCSSFile($this->assetsUrl.'/css/blogstyle.css');
 Yii::app()->clientScript->registerCssFile($this->assetsUrl.'/css/ext.min.css');
 Yii::app()->clientScript->registerCssFile($this->assetsUrl.'/css/jquery.tagsinput.css');
-Yii::app()->clientScript->registerScriptFile($this->assetsUrl.'/css/jquery.tagsinput.min.js');
+Yii::app()->clientScript->registerScriptFile($this->assetsUrl.'/js/jquery.tagsinput.min.js');
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">

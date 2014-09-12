@@ -1,22 +1,23 @@
 <?php
 /* @var $this ManagerController */
 ?>
-<div class="col-sm-12 col-xs-pull-1">
+
 <div class="panel panel-default">
+    <div class="panel-heading"><strong>System</strong></div>
     <table class="table">
         <thead>
         <tr>
-            <th>属性</th>
-            <th>值</th>
+            <th>Attribute</th>
+            <th>Value</th>
         </tr>
         </thead>
         <tbody>
         <tr>
-            <td>PHP版本</td>
+            <td>PHP_Versiom</td>
             <td><?=PHP_VERSION;?></td>
         </tr>
         <tr>
-            <td>服务器系统</td>
+            <td>Server_Version</td>
             <td><?=php_uname();?></td>
         </tr>
         <tr>
@@ -29,5 +30,4 @@
         </tr>
         </tbody>
     </table>
-</div>
 </div>
