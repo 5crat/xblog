@@ -138,6 +138,8 @@ class Users extends CActiveRecord
             }
             else
             {
+                $this->salt = uniqid();
+                $this->password = $this->encryptPass($this->password,$this->salt);
                 $this->update_time = time();
             }
             return true;
