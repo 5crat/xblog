@@ -110,7 +110,7 @@ return array(
 		// this is used in contact page
 		'adminEmail'=>'webmaster@example.com',
         //this is show number with every page
-        'pageSize'=>'10',
+        'pageSize'=>'5',
         //login auto jump address
         'returnUrl'=>'/index.php/iamadmin/manager/index',
 	),

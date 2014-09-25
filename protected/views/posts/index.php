@@ -12,9 +12,9 @@
             ?>
             <li style="padding-top: 5px;">
                 <!--显示标签-->
-                <!--<a href="<?/*=Yii::app()->request->BaseUrl.'/posts/index?category='.$value->category_name->name;*/?>" class="pl-category">
-                    <span class="label label-info"><?/*=$value->category_name->name;*/?></span>
-                </a>-->
+                <a href="<?=Yii::app()->request->BaseUrl.'/posts/index?category='.$value->category_name->name;?>" class="pl-category">
+                    <span class="label label-info"><?=$value->category_name->name;?></span>
+                </a>
                 <p class="date">
                     <?=date("d",$value['create_time']);?>
                     <b>

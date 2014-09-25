@@ -40,11 +40,27 @@ Yii::app()->clientScript->registerScriptFile($this->assetsUrl.'/js/shCore.js');
     </div>
     <!--文章评论提交-->
     <div class="jumbotron" id="comment">
-        <div class="container">
-            <?php $this->renderPartial('/comments/_form',array(
+        <!--<div class="container">
+            <?php /*$this->renderPartial('/comments/_form',array(
                 'model'=>$comment,
-            ));?>
-        </div>
+            ));*/?>
+        </div>-->
+        <!-- 多说评论框 start -->
+        <div class="ds-thread" data-thread-key="<?=$model->id;?>" data-title="<?=$model->title;?>" data-url="<?=Yii::app()->request->getUrl();?>"></div>
+        <!-- 多说评论框 end -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+            var duoshuoQuery = {short_name:"xss-art"};
+            (function() {
+                var ds = document.createElement('script');
+                ds.type = 'text/javascript';ds.async = true;
+                ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+                ds.charset = 'UTF-8';
+                (document.getElementsByTagName('head')[0]
+                    || document.getElementsByTagName('body')[0]).appendChild(ds);
+            })();
+        </script>
+        <!-- 多说公共JS代码 end -->
     </div>
 </div>
 
